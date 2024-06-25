@@ -1,0 +1,11 @@
+import pandas as pd 
+Data=pd.Series([1,1,1,2,3,3,3,4,4,5]) 
+print(Data.value_counts()) 
+print(Data.value_counts(sort=False)) 
+df=pd.DataFrame({'Grade':['A','A','A','A','B','B','B','C','D','D'],'Age':[18,18,18,19,19,20,18,18,19,19], 'Gender':['M','M','F','F','F','M','M','F','M','F']}) 
+print(df) 
+print(pd.crosstab(index=df['Grade'],columns='count')) 
+print(pd.crosstab(index=df['Age'],columns='count'))
+tab=pd.crosstab(index=df['Age'],columns='count')
+print(tab/tab.sum()) 
+print(pd.crosstab(index=df['Age'],columns=df['Grade'])) 
